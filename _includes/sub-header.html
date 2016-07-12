@@ -1,0 +1,29 @@
+<nav class="breadcrumbs">
+	<div class="container content-narrow">
+
+{% assign crumbs = page.url | split: '/' %}
+
+<ul>
+    <li><a href="/">Home</a> <i class="fa fa-chevron-right"></i></li>
+    {% for crumb in crumbs offset: 1 %}
+        {% if forloop.last %}
+            <li class="active">{{ page.title }}</li>
+        {% else %}
+            <li><a href="{{ site.baseurl }}{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | capitalize }}</a> <i class="fa fa-chevron-right"></i></li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+		<!-- <ul>
+			<li><a href="/">Home</a> <i class="fa fa-chevron-right"></i></li>
+
+    	<li><a href="{{ page.url }}">{{ page.title }}</a> <i class="fa fa-chevron-right"></i></li>
+		</ul> -->
+		<!-- <div class="search-box search-box-sm">
+			<form action="">
+				<input type="text" class="search">
+				<span class="icon icon-search"></span>
+			</form>
+		</div> -->
+	</div>
+</nav>

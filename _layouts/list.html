@@ -1,0 +1,10 @@
+---
+layout: default
+---
+{% for job in site.jobs %}
+<div class="list-layout">
+  <h2><a href="{{ site.baseurl }}{{ job.url }}">{{ job.title }}</a></h2>
+  <div>{{ job.content | truncatewords: 30 }}</div>
+  <date>{{ job.date | date_to_string }}</date>
+</div>
+{% endfor %}

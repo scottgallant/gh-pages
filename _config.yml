@@ -1,0 +1,103 @@
+---
+collections:
+  projects:
+    output: true
+    permalink: "/projects/:path/"
+  jobs:
+    output: true
+    permalink: "/about/jobs/:path/"
+  people:
+    output: true
+    permalink: "/about/people/:path/"
+  publications:
+    output: true
+    permalink: "/publications/:path/"
+  posts:
+    output: true
+    permalink: "/:year/:title/"
+exclude:
+- node_modules
+- gulpfile.js
+- package.json
+- vendor
+show_drafts: false
+markdown: redcarpet
+highlighter: pygments
+port: 4000
+url: "https://scottgallant.github.io"
+baseurl: "/gh-pages"
+permalink: "/:year/:title/"
+timezone:
+defaults:
+- scope:
+    path: ''
+    type: ''
+  values:
+    sub-title: ''
+- scope:
+    path: ''
+    type: projects
+  values:
+    description: ''
+    thumbnail: ''
+    sub-title: ''
+    tags: []
+    slug: ''
+- scope:
+    path: ''
+    type: people
+  values:
+    layout: person
+    sub-title: ''
+    thumbnail: ''
+    tags (staff, board, advisor, partner): []
+    email: ''
+    linkedin: ''
+kramdown:
+  auto_ids: true
+  toc_levels: 1..6
+  entity_output: as_char
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  input: GFM
+  hard_wrap: false
+  footnote_nr: '1'
+name: UPEI Centre for Health & Biotech Management Research
+footer-nav-about:
+- title: About Us
+  href: "/about"
+- title: Staff
+  href: "/about/staff"
+- title: Board
+  href: "/about/board"
+- title: SPORE/MSSU
+  href: "/about/spore-mssu"
+- title: Partners Collaborators
+  href: "/about/partners-collaborators"
+- title: Job Postings
+  href: "/about/jobs"
+- title: Blog
+  href: "/posts"
+navigation:
+- root: Home
+  url: "/"
+- root: About Us
+  url: "/about"
+  first-level:
+  - text: About Us
+    url: "/about"
+  - text: Staff
+    url: "/about/staff"
+  - text: Board
+    url: "/about/board"
+  - text: SPORE/MSSU
+    url: "/about/spore-mssu"
+  - text: Partners Collaborators
+    url: "/about/partners-collaborators"
+  - text: Job Postings
+    url: "/about/jobs"
+- root: Projects
+  url: "/projects"
+- root: Publications
+  url: "/publications"
+- root: Contact Us
+  url: "/contact"

@@ -1,0 +1,43 @@
+<footer class="site-footer">
+	<div class="container pure-g">
+			<div class="footer-col pure-u-1 pure-u-md-1-4">
+				<img src="{{ site.baseurl }}/images/upei-logo-white.png" alt="University of Prince Edward Island" class="footer-logo">
+			</div>
+			<div class="footer-col pure-u-1 pure-u-md-1-4">
+				<h3>About CHBMR</h3>
+				<ul>
+				{% for item in site.footer-nav-about %}
+				  <li><a href="{{ site.baseurl }}{{ item.href}}">{{ item.title }}</a></li>
+				{% endfor %}
+				</ul>
+			</div>
+			<div class="footer-col pure-u-1 pure-u-md-1-4">
+				<h3>Projects</h3>
+				<ul>
+				{% for project in site.projects %}
+					<li><a href="{{ site.baseurl }}{{ project.url }}">{{ project.title }}</a></li>
+				{% endfor %}
+				</ul>
+			</div>
+			<div class="footer-col pure-u-1 pure-u-md-1-4">
+				<h3>Contact</h3>
+				<p>UPEI Centre for Health & Biotech Management Research</p>
+				<p>550 University Ave<br>
+				Charlottetown, PE, C1A 1C4</p>
+				<p>+1 902 566 0976<br>
+	 			<a href="mailto:chbmr@upei.ca">chbmr@upei.ca</a></p>
+			</div>
+	</div>
+	<div class="copyright">
+		<p>&copy;{{ 'now' | date: "%Y" }} {{ site.name }} - All Rights Reserved <br><a href="https://forestry.io/login">Site Admin</a></p>
+	</div>
+</footer>
+<!-- Javascript -->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{ site.baseurl }}/js/vendor/jquery-2.2.3.min.js"><\/script>')</script>
+<script src="{{ site.baseurl }}/js/vendor/jquery.hoverIntent.minified.js"></script>
+<script src="{{ site.baseurl }}/js/vendor/jquery.flexslider-min.js"></script>
+<script src="{{ site.baseurl }}/js/vendor/jquery.tablesorter.min.js"></script>
+<script src="{{ site.baseurl }}/js/main.js"></script>
+</body>
+</html>

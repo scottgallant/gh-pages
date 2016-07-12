@@ -1,0 +1,99 @@
+{% include header.html %}
+{% include head.html %}
+<section id="banner">
+	<div class="container pure-g">
+		<div class="pure-u-1 pure-u-md-1">
+			<header class="call-to-action">
+				<h1>CHBMR</h1>
+				<h2>The Centre for Health and Biotech Management Research</h2>
+				<div><a href="/about" class="pure-button button-success button-xlarge">Learn More <i class="fa fa-chevron-right"></i></a></div>
+			</div>
+		</header>
+	</div>
+</section>
+<section class="main-message">
+	<div class="container pure-g">
+		<div class="pure-u-1 pure-u-md-1">
+			<div class="content content-narrow">
+				<p>{{ .content }}</p>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="services">
+	<div class="container pure-g">
+	{% for item in page.services %}
+  <div class="pure-u-1 pure-u-md-1-2">
+		<div class="service">
+			<div class="service-icon"><img src="{{ site.baseurl }}{{ item.icon }}" alt=""></div>
+			<h2>{{ item.heading }}</h2>
+			<p>{{ item.description }}</p>
+		</div>
+  </div>
+	{% endfor %}
+	</div>
+</section>
+<section class="feature">
+	<div class="container pure-g">
+		<div class="pure-u-1">
+			<h2>Want to QUIT Alcohol or Drug Use?</h2>
+			<p>Compensation available for confidential UPEI research</p>
+			<div><a href="/projects/2016-04-20-CBT4CBT/" class="pure-button button-success button-xlarge">Learn More</a></div>
+		</div>
+	</div>
+</section>
+<section class="news-twitter">
+	<div class="container pure-g">
+		<div class="pure-u-1 pure-u-md-1-2">
+			<div class="col-wrap">
+				<h2>Twitter</h2>
+				<ul class="posts">
+						<li>
+							<a href="https://twitter.com/CIHI_ICIS/status/735168527938658304" target="_new">Researching prescription #DrugAbuse in Canada? Check out our new resources at http://bit.ly/1PQTk1i </a>
+							<date>May 24, 2016</date>
+						</li>
+						<li>
+							<a href="https://twitter.com/PEIGuardian/status/732648309580390401" target="_new">Plans taking shape for youth mental health day program: P.E.I.’s first youth mental health day treatment prog...</a>
+							<date>May 17, 2016</date>
+						</li>
+						<li>
+				    	<a href="https://twitter.com/Health_PEI/status/694227559140106240" target="_new">RN's are available 24 hours a day to answer your health questions. Dial 8-1-1 to access non-emergency health info. </a>
+				    	<date>Feb 1, 2016</date>
+				    </li>
+				<!-- <a class="twitter-timeline" height="600" hide_media=true data-cards="hidden" data-tweet-limit="2" data-chrome="noheader nofooter noborders transparent noscrollbar" data-dnt="true" href="https://twitter.com/TheCHBMR" data-widget-id="727203581217148928">Tweets by @TheCHBMR</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> -->
+				<a href="https://twitter.com/TheCHBMR" class="button-outline pure-button">Follow @TheCHBRM <i class="fa fa-chevron-right"></i></a>
+			</div>
+		</div>
+		<div class="pure-u-1 pure-u-md-1-2">
+			<div class="col-wrap">
+				<h2>Latest News</h2>
+				<ul class="posts">
+				  {% for post in site.posts limit:4 %}
+				    <li>
+				    	<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+				    	<date>{{ post.date | date_to_string }}</date>
+				    </li>
+				  {% endfor %}
+				</ul>
+				<a href="/posts/" class="button-outline pure-button">More News <i class="fa fa-chevron-right"></i></a>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="partners">
+	<div class="container">
+		<h2>Funding Partners</h2>
+		<div class="flexslider">
+		  <ul class="slides">
+		  	{% for partner in page.partners %}
+					<li>
+					  <img src="{{ site.baseurl }}{{ .partner.logo }}" />
+					</li>
+		  	{% endfor %}
+		    <!-- items mirrored twice, total of 12 -->
+		  </ul>
+		</div>
+	</div>
+</section>
+{% include footer.html %}

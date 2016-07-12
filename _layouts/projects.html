@@ -1,0 +1,24 @@
+---
+layout: default-wide
+---
+<div class="grid-layout">
+	<div class="pure-g">
+		{% for project in site.projects %}
+		<div class="pure-u-1 pure-u-md-1-4">
+			<div class="card">
+				<div class="card-header">
+				{% if project.thumbnail and project.thumbnail != "" %}
+				  <img src="{{ site.baseurl }}{{ project.thumbnail }}" alt="{{ project.title }}">
+				{% else %}
+					<img src="{{ site.baseurl }}/images/placeholder.png" alt="{{ project.title }}">
+				{% endif %}
+				</div>
+				<div class="card-body">
+					<h3><a href="{{ site.baseurl }}{{ project.url }}">{{ project.title }}</a></h3>
+					<p>{{ project.description | slice: 0, 100 }}</p>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
